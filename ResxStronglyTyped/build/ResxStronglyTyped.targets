@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="BeforeCompile">
+		<ResxStronglyTyped ProjectDirectory="$(ProjectDirectory)" RootNamespace="$(RootNamespace)">
+			<Output TaskParameter="ResxFilePaths" ItemName="ResxFilePaths" />
+			<Output TaskParameter="ClassFilePaths" ItemName="ClassFilePaths" />
+		</ResxStronglyTyped>
+		<Message Text="ResxFilePaths: @(ResxFilePaths, ', ')" Importance="High" />
+		<Message Text="ClassFilePaths: @(ClassFilePaths, ', ')" Importance="High" />
+
+		<ItemGroup>
+			<Compile Remove="@(ClassFilePaths)" />
+			<Compile Include="@(ClassFilePaths)" />
+		</ItemGroup>
+	</Target>
+</Project>
