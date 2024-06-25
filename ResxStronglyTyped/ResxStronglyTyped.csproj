@@ -19,6 +19,8 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<PackageDescription>Generates strongly typed classes based on resx files</PackageDescription>
+		<RepositoryUrl>https://github.com/fabrikam-champions/ResxStronglyTyped</RepositoryUrl>
 	</PropertyGroup>
 	<!--<Target Name="PushToLocalFeed" AfterTargets="Pack">
 		<Exec Command="C:\Nuget\nuget push $(MSBuildProjectDirectory)\$(PackageOutputPath)$(ProjectName).$(Version).nupkg -Source C:\LocalNuGetFeed" />
